@@ -1,0 +1,23 @@
+AddDefaultCharset utf-8
+#Не показывать содержимое каталогов
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+#Выполнять RewriteRule если RewriteCond не выполняется (это не файл или каталог)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .*  index.php
+
+
+#RewriteRule ^product/([a-z0-9-]+)/?$ product.php?product=$1
+#RewriteRule ^product/(\d+)/?$ product.php?product=$1
+#RewriteRule ^category/(\d+) index.php?category=$1 [QSA]
+
+#RewriteRule product/10636 product.php?product=10636
+#http://localhost/catalog/product.php?product=10636
+
+#RewriteRule catalog/701 catalog/?category=701 
+#http://localhost/catalog/?category=701
+
+#RewriteRule ^(.*)\.(gif|jpg|png|jpeg|css|js|swf)$ /public/$1.$2 [L,NC]
