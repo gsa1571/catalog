@@ -7,4 +7,7 @@
             <a href='<?=$reflink?>'><?=$value?></a>
         </li>
     <?php endforeach; ?>
+    <li>
+        <a href=<?=PATH.'category/'?>>Каталог</a>
+    </li>
 </ul>

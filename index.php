@@ -6,9 +6,9 @@ define('CATALOG', true);
 
 // ?P<product_alias> - именованные ячейка хранения шаблона
 $routes = [
-    ['url' => '#^$|^\?#' , 'view' => 'category'],
+    ['url' => '#^$|^\?#' , 'view' => 'page'],
     ['url' => '#^product/(?P<product_alias>[a-z0-9-]+)#i', 'view' => 'product' ],
-    ['url' => '#^category/(?P<category_id>\d+)#i', 'view' => 'category' ],
+    ['url' => '#^category/(?P<category_id>\d+)?#i', 'view' => 'category' ],
     ['url' => '#^page/(?P<page_alias>[a-z0-9-]+)#i', 'view' => 'page' ],
 ];
 
