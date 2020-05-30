@@ -4,10 +4,14 @@ include "models/{$view}_model.php";
 
 $breadcrumbs = "<a href='".PATH."'>Главная</a> / "; 
 
-if (isset($page_alias)){
-    $page = get_one_page($page_alias);
-    $breadcrumbs .= $page['title'];    
-} else $page_alias = null;
+if (!isset($page_alias)) $page_alias = null;
+
+$page = get_one_page($page_alias);
+if(!$page) {
+    include 'views/404.php';
+    exit;
+}
+$breadcrumbs .= $page['title'];    
 
 include "views/{$view}.php";
 ?>
