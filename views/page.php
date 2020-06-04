@@ -30,7 +30,7 @@
     <script src="<?=PATH?>views/js/jquery.accordion.js"></script>
     <script>
         $(function(){
-			$(".category").dcAccordion();
+			$(".category").dcAccordion({autoExpand	 : true});
 		});
     </script>
 </body>

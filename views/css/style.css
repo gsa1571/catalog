@@ -65,11 +65,13 @@ ul {
 
 .menu {
   margin: 0 0 20px 0;
+  height: 50px;
 }
 
 .menu li {
   display: inline; /* Отображать как строчный элемент */
   margin: 0 20px 0 0;
+  width: 150px;
 }
 
 .menu a:hover {

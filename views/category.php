@@ -51,7 +51,7 @@
     <script src="<?=PATH?>views/js/jquery.accordion.js"></script>
     <script>
         $(function(){
-            $('.category').dcAccordion();
+            $('.category').dcAccordion({autoExpand	 : true});
             
             $('#perpage').change(function(){
                 var perPage = this.value;

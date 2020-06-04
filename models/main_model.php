@@ -56,11 +56,28 @@ function categories_to_string($data){
  * Вывод категории в список
  **/
 function categories_to_template($category){
-
+    global $parent_cut;
     ob_start();
     include 'views/category_template.php';
     return ob_get_clean();
 }
+
+/**
+*
+**/
+function get_parent_category($id, $array){
+    $top_category = false;
+    
+    if ($id>0) $top_category = $array[$id];
+
+    if (isset($top_category)){
+        while($top_category['parent']>0) 
+            $top_category = $array[$top_category['parent']];
+    }  
+    
+    return $top_category;
+}
+
 
 /**
 *
@@ -153,37 +170,15 @@ function breadcrumbs($id, $array) {
  **/
 function get_pages(){
     global $connection;
-    $query = 'SELECT title, alias FROM pages ORDER by position ASC';
+    $query = 'SELECT title, id FROM categories WHERE parent = 0 ORDER by id ASC';
     $res = mysqli_query($connection, $query);
 
     $arr_pages = [];
     while($row = mysqli_fetch_assoc($res)){
-        $arr_pages[$row['alias']] = $row['title']; 
+        $arr_pages[$row['id']] = $row['title']; 
     }
 
     return $arr_pages;
 }
-
-/**
- *  Вывод меню страниц в HTML
- */
-function pages_to_string($data){
-    $str = null;
-    foreach($data as $navpage){
-        $str .= pages_to_template($navpage);
-    }
-
-    return $str;
-}
-
-/**
- * Вывод меню страниц по шаблону
- **/
-function pages_to_template($navpage){
-    ob_start();
-        include 'views/pages_template.php';
-    return ob_get_clean();
-}
-
 
 ?>
