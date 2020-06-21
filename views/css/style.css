@@ -75,3 +75,21 @@ ul {
 .menu a:hover {
   text-decoration: none;
 }
+.comments {
+  margin: 20px 0;
+  word-wrap: break-word;
+}
+
+.comment-content {
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  margin: 10px 0 0 0;
+  padding: 10px;
+}
+.comments ul {
+  padding-left: 20px;
+}
+
+.manager span {
+  color: red;
+}

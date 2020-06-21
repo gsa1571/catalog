@@ -43,10 +43,10 @@ function map_tree($dataset) {
 /**
  *  массив дерева в HTML
  */
-function categories_to_string($data){
+function categories_to_string($data, $template='category_template.php'){
     $str = null;
     foreach($data as $item){
-        $str .= categories_to_template($item);
+        $str .= categories_to_template($item, $template);
     }
 
     return $str;
@@ -55,10 +55,10 @@ function categories_to_string($data){
 /**
  * Вывод категории в список
  **/
-function categories_to_template($category){
+function categories_to_template($category, $template){
 
     ob_start();
-    include 'views/category_template.php';
+    include "views/$template";
     return ob_get_clean();
 }
 

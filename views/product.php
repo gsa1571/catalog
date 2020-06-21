@@ -23,7 +23,13 @@
                 <p><?=print_arr($get_one_product)?></p>
             <?php else: ?>
                 <p>Продукт отсутствует</p>
-            <?php endif; ?>    
+            <?php endif; ?>  
+            <hr>
+            <h3>Отзывы о товаре(0)</h3>
+            <ul class="comments">
+                <?=$comments?>
+            </ul>
+
         </div>
     </div>
 
