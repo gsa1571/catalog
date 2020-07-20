@@ -28,10 +28,7 @@
     <script src="<?=PATH?>views/js/jquery-1.9.0.min.js"></script>
     <script src="<?=PATH?>views/js/jquery.cookie.js"></script>
     <script src="<?=PATH?>views/js/jquery.accordion.js"></script>
-    <script>
-        $(function(){
-			$(".category").dcAccordion();
-		});
-    </script>
+    <script src="<?=PATH?>views/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="<?=PATH?>views/js/script.js"></script>
 </body>
 </html>

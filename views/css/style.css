@@ -16,6 +16,7 @@
 .content {
   float: left;
   width: 680px;
+  margin: 0 0 50px 0;
 }
 
 ul {
@@ -92,4 +93,143 @@ ul {
 
 .manager span {
   color: red;
+}
+
+/* Form */
+.form p {
+  margin-bottom: 20px;
+}
+.form label {
+  width: 180px;
+  float: left;
+  color: #999;
+  padding-top: 5px;
+}
+.form input {
+  width: 400px;
+}
+.form textarea {
+  width: 400px;
+  max-width: 400px;
+  min-width: 400px;
+  line-height: 150%;
+}
+.form input[type="checkbox"] {
+  width: auto;
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 9px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background: #fff url("img/bg.jpg") left top repeat-x;
+}
+
+.form input:hover,
+.form textarea:hover,
+.form select:hover,
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: #c9c9c9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+button.open-form,
+.form .submit input {
+  width: auto;
+  background: #617798;
+  color: #fff;
+  padding: 9px 15px;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.open-form:hover,
+.form .submit input:hover {
+  background: #2b415e;
+}
+
+/* Add reply comment */
+
+.reply {
+  cursor: pointer;
+  color: #2b415e;
+  text-decoration: underline;
+}
+
+.reply:hover {
+  text-decoration: none;
+}
+
+#loader {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  opacity: 0.9;
+}
+
+#loader span {
+  display: block;
+  background: url(../img/loader.gif);
+  width: 128px;
+  height: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -7px 0 0 -56px;
+}
+
+.new-comment {
+  display: none;
+  background: #dcdcdc;
+}
+
+.errors {
+  color: #7f5354;
+}
+
+.auth {
+  margin: 0 0 20px 0;
+}
+
+.auth label,
+.auth input {
+  width: auto;
+  float: none;
+  display: block;
+}
+
+.auth p {
+  margin: 0;
+}
+
+p.submit {
+  margin: 5px 0 0 0;
+}
+
+.error {
+  padding: 5px;
+  border: grey dashed 1px;
+  background: #ffeded;
+  color: #7f5354;
+}
+.ok {
+  padding: 5px;
+  border: 1px solid #adc092;
+  background: #f0faf1;
+  color: 58715e;
 }

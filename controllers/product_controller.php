@@ -8,6 +8,7 @@ if (isset($product_alias)){
 
     //ID item
     $product_id = $get_one_product['id'];
+    $count_comments = count_comments($product_id);
     $get_comments = get_comments($product_id);
     $comments_tree = map_tree($get_comments);
     $comments = categories_to_string($comments_tree, 'comments_template.php');

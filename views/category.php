@@ -27,11 +27,11 @@
                 </select>
             </div>
 
-            <?php if($products) : ?>
+            <?php if($products): ?>
                 <?php if($count_pages>1): ?>
                     <div class="pagination"><?=$pagenation?></div>
                 <?php endif; ?>    
-                <?php foreach($products as $item) : ?>
+                <?php foreach($products as $item): ?>
                     <!-- <a href="<?=PATH?>product/<?=$item['id']?>"><?=$item['title']?></a> <br> -->
                     <a href="<?=PATH?>product/<?=$item['alias']?>"><?=$item['title']?></a> <br>
                 <?php endforeach; ?>
@@ -41,7 +41,7 @@
             <?php else : ?>
                 <p>Товаров нет</p>
 
-            <?php endif; ?>
+            <?php endif;?>
 
         </div>
     </div>
@@ -49,17 +49,7 @@
     <script src="<?=PATH?>views/js/jquery-1.9.0.min.js"></script>
     <script src="<?=PATH?>views/js/jquery.cookie.js"></script>
     <script src="<?=PATH?>views/js/jquery.accordion.js"></script>
-    <script>
-        $(function(){
-            $('.category').dcAccordion();
-            
-            $('#perpage').change(function(){
-                var perPage = this.value;
-                //$.cookie('per_page', perPage,  {expires : 7, path : '/category/'});
-                $.cookie('per_page', perPage,  {expires : 7});
-                window.location = location.href;
-            });
-		});
-    </script>
+    <script src="<?=PATH?>views/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="<?=PATH?>views/js/script.js"></script>
 </body>
 </html>

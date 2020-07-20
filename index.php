@@ -1,15 +1,18 @@
 <?php
 error_reporting(E_ALL);
 define('CATALOG', true);
+session_start();
 
 
 
 // ?P<product_alias> - именованные ячейка хранения шаблона
 $routes = [
-    ['url' => '#^$|^\?#' , 'view' => 'category'],
     ['url' => '#^product/(?P<product_alias>[a-z0-9-]+)#i', 'view' => 'product' ],
     ['url' => '#^category/(?P<category_id>\d+)#i', 'view' => 'category' ],
     ['url' => '#^page/(?P<page_alias>[a-z0-9-]+)#i', 'view' => 'page' ],
+    ['url' => '#^add_comment#i', 'view' => 'add_comment' ],
+    ['url' => '#^login#i', 'view' => 'login' ],
+    ['url' => '#^$|^\?#' , 'view' => 'category']
 ];
 
 //$url=str_replace('/catalog/','',$_SERVER['REQUEST_URI']);
@@ -31,6 +34,6 @@ if ( empty($match) ){
 // извлекает из массива значения 
 //и создаст переменные $product_alias и $id
 extract($match);
+include 'config.php';
 include "controllers/{$view}_controller.php";
-
 ?>

@@ -7,7 +7,9 @@
         </div>
         <div>
             <?=nl2br(htmlspecialchars($category['comment_text']))?>
-            <p><a href="#<?=$category['comment_id']?>">Ответить</a></p>
+            <p class='open-form'>
+                <a class='reply' data="<?=$category['comment_id']?>">Ответить</a>
+            </p>
         </div>
     </div>
     <?php if(isset($category['childs']) && $category['childs']): ?>
