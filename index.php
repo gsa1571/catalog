@@ -12,6 +12,8 @@ $routes = [
     ['url' => '#^page/(?P<page_alias>[a-z0-9-]+)#i', 'view' => 'page' ],
     ['url' => '#^add_comment#i', 'view' => 'add_comment' ],
     ['url' => '#^login#i', 'view' => 'login' ],
+    ['url' => '#^logout#i', 'view' => 'logout' ],
+    ['url' => '#^forgot#i', 'view' => 'forgot' ],
     ['url' => '#^$|^\?#' , 'view' => 'category']
 ];
 

@@ -32,10 +32,17 @@
             <?php endif; ?>  
             <div id="form-wrap">
                 <form action="<?=PATH?>add_comment" method="post" class="form">
+                    <?php if(isset($_SESSION['auth']['user'])): ?>
+                    <p style="display:none;">
+                        <label for="comment-author">Имя:</label>
+                        <input type="text" name="comment-author" id="comment-author" value="<?=htmlspecialchars($_SESSION['auth']['user'])?>">
+                    </p>
+                    <?php else: ?>
                     <p>
                         <label for="comment-author">Имя:</label>
                         <input type="text" name="comment-author" id="comment-author">
                     </p>
+                    <?php endif; ?>
                     <p>
                         <label for="comment-text">Текст:</label>
                         <textarea name="comment-text" id="comment-text" cols="30" rows="6"></textarea>
@@ -59,6 +66,7 @@
     <script src="<?=PATH?>views/js/jquery.cookie.js"></script>
     <script src="<?=PATH?>views/js/script.js"></script>
     <script>
+
 $(function () {
 
     $("#errors").dialog({

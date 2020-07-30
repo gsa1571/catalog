@@ -233,3 +233,7 @@ p.submit {
   background: #f0faf1;
   color: 58715e;
 }
+
+#forgot {
+  display: none;
+}

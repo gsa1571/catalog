@@ -10,12 +10,12 @@ function authorization(){
         $_SESSION['auth']['error'] = 'Поля логин/пароль обязательны к заполнению';
     } else {
         $password = md5($password);
-        $query = "SELECT * FROM users WHERE login='$login' AND password='$password' LIMIT 1";
+        $query = "SELECT * FROM `users` WHERE `login`='$login' AND `password`='$password' LIMIT 1";
         $res = mysqli_query($connection, $query);
         if(mysqli_num_rows($res)==1){
-            $row = mysqli_fetch_accos($res);
-            $_SESSION['auth']['user'] = $res['name'];
-            $_SESSION['auth']['is_admin'] = $res['is_admin'];
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['auth']['user'] = $row['name'];
+            $_SESSION['auth']['is_admin'] = $row['is_admin'];
         } else {
             $_SESSION['auth']['error'] = 'Логин и пароль введены неверно';
         }
